@@ -1,0 +1,1 @@
+window.foo = () => console.log('hello from sideeffect');
