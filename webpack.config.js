@@ -4,6 +4,6 @@ module.exports = {
     output: {
         path: __dirname + '/build/',
         filename: 'bundle.js',
-        publicPath: "http://cdn.example.com/assets/[hash]/"
+        publicPath: "/build"
     }
 };
