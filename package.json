@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/lasl321/webpack-spike#readme",
   "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1"
   }
