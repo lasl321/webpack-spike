@@ -23,7 +23,7 @@ module.exports = {
         // Path in dev server
         publicPath: "/build"
     },
-    debug: true,
+    debug: false,
     devtool: 'source-map',
     devServer: {
         contentBase: "./src",
