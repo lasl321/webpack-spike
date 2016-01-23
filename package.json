@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/lasl321/webpack-spike/issues"
   },
-  "homepage": "https://github.com/lasl321/webpack-spike#readme"
+  "homepage": "https://github.com/lasl321/webpack-spike#readme",
+  "devDependencies": {
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
+  }
 }
