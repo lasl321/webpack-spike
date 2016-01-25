@@ -10,12 +10,15 @@ module.exports = {
        // To show that a module doesn't have to export anything
         './es6/sideeffect',
         
+        // For auto reload
+        "webpack-dev-server/client?http://localhost:8080",
+        
         // Main entry point
         './app'
     ],
     output: {
         // Output directory
-        path: __dirname + '/build/',
+        path: path.join(__dirname, '/build/'),
         
         // Output file
         filename: 'bundle.js',
@@ -30,6 +33,9 @@ module.exports = {
     },
     module: {
         loaders: [{
+            test: /.css$/,
+            loader: 'style!css'
+        },{
             test: /.js$/,
             
             // Only convert those files in the es6 directory
