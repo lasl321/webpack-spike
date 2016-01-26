@@ -67,8 +67,8 @@ module.exports = {
 
         loader: 'style!css'
     }, {
-       test: /\.(png|jpg)$/,
-       loader: 'url?limit=25000'
+        test:   /\.(png|gif|jpe?g|svg)$/i,
+        loader: 'url?limit=25000'
     }]},
     plugins: plugins
 };
