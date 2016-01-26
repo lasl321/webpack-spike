@@ -1,18 +1,24 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
     // Context for entry items
     context: path.join(__dirname, 'src'),
-    entry:[
-        // For es2015 environment
-       'babel-polyfill',
-       
-        // For auto reload
-        "webpack-dev-server/client?http://localhost:8080",
-        
-        // Main entry point
-        './app.jsx'
-    ],
+    entry: {
+        vendors: [
+            // For es2015 environment
+            'babel-polyfill',
+
+            'react'
+        ],
+        app: [
+            // For auto reload
+            "webpack-dev-server/client?http://localhost:8080",
+
+            // Main entry point
+             './app.jsx'
+        ]
+    },
     output: {
         // Output directory
         path: path.join(__dirname, 'build'),
@@ -46,5 +52,11 @@ module.exports = {
         test: /.css$/,
         
         loader: 'style!css'
+    }, {
+       test: /\.(png|jpg)$/,
+       loader: 'url?limit=25000'
     }]},
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+    ]
 };
