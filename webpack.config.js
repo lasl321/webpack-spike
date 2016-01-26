@@ -7,18 +7,15 @@ module.exports = {
         // For es2015 environment
        'babel-polyfill',
        
-       // To show that a module doesn't have to export anything
-        './es6/sideeffect',
-        
         // For auto reload
         "webpack-dev-server/client?http://localhost:8080",
         
         // Main entry point
-        './app'
+        './app.jsx'
     ],
     output: {
         // Output directory
-        path: path.join(__dirname, '/build/'),
+        path: path.join(__dirname, 'build'),
         
         // Output file
         filename: 'bundle.js',
@@ -33,19 +30,13 @@ module.exports = {
     },
     module: {
         loaders: [{
-            test: /.css$/,
-            loader: 'style!css'
-        },{
-            test: /.js$/,
+            test: /.jsx$/,
             
-            // Only convert those files in the es6 directory
             include: path.join(__dirname, 'src'),
             loader: "babel-loader",
 
             query: {
-                // Use common runtime helpers
-                plugins: ['transform-runtime'],
-                presets: ['es2015']
+                presets: ['es2015', 'react']
             }
     }]},
 };
