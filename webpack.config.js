@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var production = process.env.NODE_ENV === 'production';
 
 module.exports = {
     // Context for entry items
@@ -24,13 +25,14 @@ module.exports = {
         path: path.join(__dirname, 'build'),
         
         // Output file
-        filename: 'bundle.js',
+        filename: production ? 'bundle-[hash]' : 'bundle.js',
+        chunkFilename: '[name]-[chunkhash].js',
         
         // Path in dev server
         publicPath: "/build"
     },
-    debug: false,
-    devtool: 'source-map',
+    debug: !production,
+    devtool: !production ? 'source-map' : false,
     devServer: {
         contentBase: "./src",
     },
