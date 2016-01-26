@@ -1,8 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
 var CleanPlugin = require('clean-webpack-plugin');
+var ExtractPlugin = require('extract-text-webpack-plugin');
+
 var production = process.env.NODE_ENV === 'production';
 var plugins =  [
+    new ExtractPlugin('bundle.css'),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
 ];
 
@@ -57,7 +60,8 @@ module.exports = {
     }, {
         test: /.sass$/,
         
-        loader: 'style!css!sass'
+        loader: ExtractPlugin.extract('css!sass') 
+        //'style!css!sass'
     }, {
         test: /.css$/,
         
