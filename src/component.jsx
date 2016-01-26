@@ -1,7 +1,15 @@
 import React from 'react';
 
 export default class Hello extends React.Component {
-  render() {
-    return <h1>Hello world</h1>;
-  }
+    constructor (props) {
+        super(props);
+        
+        this.state = {
+            name: 'Joe Bruin'
+        };
+    }
+    
+    render() {
+        return <h1>Hello {this.props.name}</h1>;
+    }
 }
