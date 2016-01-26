@@ -39,7 +39,7 @@ module.exports = {
             test: /.js$/,
             
             // Only convert those files in the es6 directory
-            include: path.join(__dirname, '/src/es6'),
+            include: path.join(__dirname, 'src'),
             loader: "babel-loader",
 
             query: {
