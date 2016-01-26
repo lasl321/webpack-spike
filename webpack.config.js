@@ -1,6 +1,14 @@
 var path = require('path');
 var webpack = require('webpack');
+var CleanPlugin = require('clean-webpack-plugin');
 var production = process.env.NODE_ENV === 'production';
+var plugins =  [
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+];
+
+if (production) {
+    plugins.push(new CleanPlugin('build'));
+}
 
 module.exports = {
     // Context for entry items
@@ -58,7 +66,5 @@ module.exports = {
        test: /\.(png|jpg)$/,
        loader: 'url?limit=25000'
     }]},
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
-    ]
+    plugins: plugins
 };
