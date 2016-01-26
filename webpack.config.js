@@ -8,8 +8,8 @@ module.exports = {
         vendors: [
             // For es2015 environment
             'babel-polyfill',
-
-            'react'
+            'react',
+            'jquery'
         ],
         app: [
             // For auto reload
