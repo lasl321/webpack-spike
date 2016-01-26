@@ -34,11 +34,11 @@ module.exports = {
     output: {
         // Output directory
         path: path.join(__dirname, 'build'),
-        
+
         // Output file
         filename: production ? 'bundle-[hash]' : 'bundle.js',
         chunkFilename: '[name]-[chunkhash].js',
-        
+
         // Path in dev server
         publicPath: "/build"
     },
@@ -50,7 +50,7 @@ module.exports = {
     module: {
         loaders: [{
             test: /.jsx$/,
-            
+
             include: path.join(__dirname, 'src'),
             loader: "babel-loader",
 
@@ -59,12 +59,12 @@ module.exports = {
             }
     }, {
         test: /.sass$/,
-        
-        loader: ExtractPlugin.extract('css!sass') 
+
+        loader: ExtractPlugin.extract('style', 'css!sass')
         //'style!css!sass'
     }, {
         test: /.css$/,
-        
+
         loader: 'style!css'
     }, {
        test: /\.(png|jpg)$/,
