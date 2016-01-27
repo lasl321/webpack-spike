@@ -24,9 +24,6 @@ module.exports = {
             'jquery'
         ],
         app: [
-            // For auto reload
-            "webpack-dev-server/client?http://localhost:8080",
-
             // Main entry point
              './app.jsx'
         ]
