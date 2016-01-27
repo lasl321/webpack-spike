@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rmdir build /s /q",
     "build": "webpack --progress --colors",
-    "server": "webpack-dev-server --progress --colors"
+    "server": "webpack-dev-server --progress --colors --inline --hot"
   },
   "repository": {
     "type": "git",
