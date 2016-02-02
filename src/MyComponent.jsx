@@ -2,6 +2,12 @@ import './MyComponent.sass';
 import React from 'react';
 import $ from 'jquery'
 
+class Xyz {
+    getName() {
+        return 'theName';
+    }
+}
+
 export default React.createClass({
   render: function () {
       console.log($);
