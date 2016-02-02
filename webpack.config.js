@@ -20,11 +20,12 @@ module.exports = {
         vendors: [
             // For es2015 environment
             'babel-polyfill',
+            // TODO Figure out if we need babel common code plugin
             'react',
             'jquery'
         ],
         app: [
-            // Main entry point
+                        // Main entry point
              './app.jsx'
         ]
     },
